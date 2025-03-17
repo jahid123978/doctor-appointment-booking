@@ -4,7 +4,7 @@
   "description": "MERN Stack Doctor Appointment Booking Application using React , Redux Toolkit , AntD , Node , MongoDB",
   "main": "index.js",
   "engines": {
-    "node": "15.7.0",
+    "node": "22.x",
     "npm": "7.4.3"
   },
   "scripts": {
