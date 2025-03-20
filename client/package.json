@@ -44,5 +44,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://doctor-appointment-booking-backend.vercel.app"
+  "proxy": "https://doctor-appointment-booking-api.vercel.app"
 }
