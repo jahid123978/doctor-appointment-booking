@@ -8,8 +8,8 @@ const authMiddleware = require("../middlewares/authMiddleware");
 const Appointment = require("../models/appointmentModel");
 const multer = require('multer');
 const moment = require("moment");
-const { TWILIO_SERVICE_SID, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN } =  process.env;
- const client = require('twilio')(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, { lazyLoading: true })
+// const { TWILIO_SERVICE_SID, TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN } =  process.env;
+//  const client = require('twilio')(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, { lazyLoading: true })
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, './public/images'); // Store images in the 'uploads' directory
@@ -89,19 +89,19 @@ router.post("/login", async (req, res) => {
   }
 });
 router.post("/verify-otp", async(req, res)=>{
-  const {phoneNumber, otp } = req.body;
-  try {
-     const verifiedResponse= await client.verify.
-     v2.services(TWILIO_SERVICE_SID)
-     .verificationChecks.create({
-         to: `+${phoneNumber}`,
-         code: otp
-     })
+  // const {phoneNumber, otp } = req.body;
+  // try {
+  //    const verifiedResponse= await client.verify.
+  //    v2.services(TWILIO_SERVICE_SID)
+  //    .verificationChecks.create({
+  //        to: `+${phoneNumber}`,
+  //        code: otp
+  //    })
     //  : ${JSON.stringify(verifiedResponse)}
-     res.status(200).send({message: `OTP verified successfully!`, success: true})
-  } catch (error) {
-     res.status(error?.status || 400).send({message: "Error logging in", success: false, error})
-  }
+  //    res.status(200).send({message: `OTP verified successfully!`, success: true})
+  // } catch (error) {
+  //    res.status(error?.status || 400).send({message: "Error logging in", success: false, error})
+  // }
 })
 
 router.post("/get-user-info-by-id", authMiddleware, async (req, res) => {
