@@ -7,17 +7,17 @@ const userRoute = require("./src/routes/userRoute");
 const adminRoute = require("./src/routes/adminRoute");
 const doctorRoute = require("./src/routes/doctorsRoute");
 const path = require("path");
-// const cors = require('cors');
-// const corsOptions = {
-//   origin: 'http://localhost:3000', // Replace with your allowed origin(s)
-//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//   allowedHeaders: ['Content-Type', 'Authorization'], // Allow the Authorization header
-// };
+const cors = require('cors');
+const corsOptions = {
+  origin: 'http://localhost:3000', // Replace with your allowed origin(s)
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow the Authorization header
+};
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
-// // If you need to catch preflight OPTIONS requests explicitly:
-// app.options('*', cors(corsOptions));
+// If you need to catch preflight OPTIONS requests explicitly:
+app.options('*', cors(corsOptions));
 
 app.use("/api/user", userRoute);
 app.use("/api/admin", adminRoute);
