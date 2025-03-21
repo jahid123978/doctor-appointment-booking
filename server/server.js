@@ -16,8 +16,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// If you need to catch preflight OPTIONS requests explicitly:
-app.options('*', cors(corsOptions));
+// // If you need to catch preflight OPTIONS requests explicitly:
+// app.options('*', cors(corsOptions));
 
 app.use("/api/user", userRoute);
 app.use("/api/admin", adminRoute);
