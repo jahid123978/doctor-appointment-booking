@@ -12,7 +12,7 @@ function Userslist() {
   const getUsersData = async () => {
     try {
       dispatch(showLoading());
-      const resposne = await axios.get("/api/admin/get-all-users", {
+      const resposne = await axios.get("https://doctor-appointment-booking-api.vercel.app/api/admin/get-all-users", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

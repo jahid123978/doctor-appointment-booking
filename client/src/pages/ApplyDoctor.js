@@ -21,7 +21,7 @@ function ApplyDoctor() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/user/apply-doctor-account",
+        "https://doctor-appointment-booking-api.vercel.app/api/user/apply-doctor-account",
         {
           ...values,
           User: user,

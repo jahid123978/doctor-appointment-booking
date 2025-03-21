@@ -14,7 +14,7 @@ function DoctorAppointments() {
     try {
       dispatch(showLoading());
       const resposne = await axios.get(
-        "/api/doctor/get-appointments-by-doctor-id",
+        "https://doctor-appointment-booking-api.vercel.app/api/doctor/get-appointments-by-doctor-id",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -50,7 +50,7 @@ function DoctorAppointments() {
     try {
       dispatch(showLoading());
       const resposne = await axios.post(
-        "/api/doctor/change-appointment-status",
+        "https://doctor-appointment-booking-api.vercel.app/api/doctor/change-appointment-status",
         { appointmentId : record._id, status: status },
         {
           headers: {

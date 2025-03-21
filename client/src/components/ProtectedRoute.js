@@ -14,7 +14,7 @@ function ProtectedRoute(props) {
     try {
       dispatch(showLoading())
       const response = await axios.post(
-        "/api/user/get-user-info-by-id",
+        "https://doctor-appointment-booking-api.vercel.app/api/user/get-user-info-by-id",
         { token: localStorage.getItem("token") },
         {
           headers: {

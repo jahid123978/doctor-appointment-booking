@@ -16,7 +16,7 @@ function Login() {
     console.log("values: ", values);
     try {
       // dispatch(showLoading());
-      const response = await axios.post("/api/user/login", values);
+      const response = await axios.post("https://doctor-appointment-booking-api.vercel.app/api/user/login", values);
       // dispatch(hideLoading());
       if (response.data.success) {
         toast.success(response.data.message);
@@ -39,7 +39,7 @@ function Login() {
     }
     try {
       // dispatch(showLoading());
-      const response = await axios.post("/api/user/verify-otp", actualValue);
+      const response = await axios.post("https://doctor-appointment-booking-api.vercel.app/api/user/verify-otp", actualValue);
       // dispatch(hideLoading());
       if (response.data.success) {
         toast.success(response.data.message);

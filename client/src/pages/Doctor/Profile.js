@@ -19,7 +19,7 @@ function Profile() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/doctor/update-doctor-profile",
+        "https://doctor-appointment-booking-api.vercel.app/api/doctor/update-doctor-profile",
         {
           ...values,
           userId: user._id,
@@ -51,7 +51,7 @@ function Profile() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "/api/doctor/get-doctor-info-by-user-id",
+        "https://doctor-appointment-booking-api.vercel.app/api/doctor/get-doctor-info-by-user-id",
         {
           userId: params.userId,
         },

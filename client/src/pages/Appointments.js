@@ -59,7 +59,7 @@ function Appointments({onChange}) {
   const getAppointmentsData = async () => {
     try {
       dispatch(showLoading());
-      const resposne = await axios.get("/api/user/get-appointments-by-user-id", {
+      const resposne = await axios.get("https://doctor-appointment-booking-api.vercel.app/api/user/get-appointments-by-user-id", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -85,7 +85,7 @@ function Appointments({onChange}) {
     try {
       dispatch(showLoading());
       const resposne = await axios.post(
-        "/api/doctor/change-appointment-payment",
+        "https://doctor-appointment-booking-api.vercel.app/api/doctor/change-appointment-payment",
         { appointmentId : recordInfo._id, number: values?.number, transactionId: values?.transaction, isPayment: true},
         {
           headers: {
@@ -107,7 +107,7 @@ function Appointments({onChange}) {
     try {
       dispatch(showLoading());
       const resposne = await axios.post(
-        "/api/doctor/change-appointment-status",
+        "https://doctor-appointment-booking-api.vercel.app/api/doctor/change-appointment-status",
         { appointmentId : record._id, status: status },
         {
           headers: {
