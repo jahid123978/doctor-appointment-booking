@@ -9,7 +9,7 @@ const doctorRoute = require("./src/routes/doctorsRoute");
 const path = require("path");
 const cors = require('cors');
 const corsOptions = {
-  origin: 'http://localhost:3000', // Replace with your allowed origin(s)
+  origin: 'https://doctor-appointment-booking-client-three.vercel.app', // Replace with your allowed origin(s)
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow the Authorization header
 };
